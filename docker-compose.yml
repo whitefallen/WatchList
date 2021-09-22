@@ -43,7 +43,7 @@ services:
     depends_on:
       - server
     ports:
-      - "3000:3000"
+      - "3055:3055"
     networks:
       - app-network
 
