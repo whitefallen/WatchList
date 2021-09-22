@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap";
 function App() {
   useEffect(() => {
-    fetch('http://localhost:5000/watchlist')
+    fetch(`${process.env.REACT_APP_SERVER_URL}/watchlist`)
       .then(response => response.json())
       .then(data => setList(data))
   }, [])
@@ -22,7 +22,7 @@ function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ list: sortedList})
     };
-    fetch('http://localhost:5000/watchlist/add', requestOptions)
+    fetch(`${process.env.REACT_APP_SERVER_URL}/watchlist/add`, requestOptions)
       .then(response => response.json())
   }
   return (
